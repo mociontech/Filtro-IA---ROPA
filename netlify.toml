@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[functions]
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/api/decart/token"
+  to = "/.netlify/functions/decart-token"
+  status = 200
+  force = true
