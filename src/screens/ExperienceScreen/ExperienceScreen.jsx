@@ -341,20 +341,6 @@ export default function ExperienceScreen() {
             </div>
           )}
 
-          <img
-            src="/Marca_Inferior.png"
-            alt="Marca inferior"
-            style={{
-              position: 'absolute',
-              left: '50%',
-              bottom: 54,
-              transform: 'translateX(-50%)',
-              width: 'min(62vw, 270px)',
-              height: 'auto',
-              display: 'block',
-            }}
-          />
-
           {(camError || connectStatus === 'error') && (
             <div
               style={{
