@@ -1,0 +1,183 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 28px 40px;
+  gap: 28px;
+  height: 100%;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.root::-webkit-scrollbar { display: none; }
+
+/* Header */
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.back {
+  background: none;
+  border: 0.5px solid var(--s3);
+  color: var(--dim);
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  margin-top: 4px;
+  transition: border-color .15s, color .15s;
+}
+.back:hover { border-color: var(--dim); color: var(--txt); }
+
+.step {
+  font-size: 9px;
+  color: var(--red);
+  letter-spacing: 3px;
+  margin-bottom: 6px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 32px;
+  letter-spacing: 3px;
+  line-height: 1.1;
+  color: var(--txt);
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 9px;
+  color: var(--muted);
+  letter-spacing: 3px;
+}
+
+.input {
+  background: var(--s1);
+  border: 0.5px solid var(--s3);
+  border-radius: 10px;
+  padding: 15px 16px;
+  color: var(--txt);
+  font-size: 16px;
+  font-family: var(--font-body);
+  outline: none;
+  transition: border-color .15s;
+}
+.input::placeholder { color: var(--s3); }
+.input:focus  { border-color: var(--red); }
+.inputError   { border-color: var(--red) !important; }
+
+.error {
+  font-size: 11px;
+  color: var(--red);
+  letter-spacing: 0.5px;
+}
+
+/* Gender picker */
+.genderRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.genderBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 12px;
+  background: var(--s1);
+  border: 0.5px solid var(--s2);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: border-color .15s, background .15s;
+  position: relative;
+  overflow: hidden;
+}
+.genderBtn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: transparent;
+  transition: background .15s;
+}
+.genderBtn:hover      { border-color: var(--s3); background: #191919; }
+.genderActive         { border-color: var(--red) !important; background: #1a0a0d !important; }
+.genderActive::before { background: var(--red); }
+
+.genderIcon  { font-size: 22px; color: var(--dim); }
+.genderLabel { font-size: 13px; font-weight: 500; color: var(--txt); letter-spacing: 1px; }
+
+/* Marketing checkbox */
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+}
+
+.checkIcon {
+  width: 20px; height: 20px;
+  border: 0.5px solid var(--s3);
+  border-radius: 4px;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px;
+  color: var(--red);
+  background: var(--s1);
+  transition: border-color .15s;
+  margin-top: 1px;
+}
+
+.checked .checkIcon { border-color: var(--red); background: #1a0a0d; }
+
+.checkLabel {
+  font-size: 12px;
+  color: var(--dim);
+  line-height: 1.5;
+}
+
+/* CTA */
+.cta {
+  width: 100%;
+  background: var(--red);
+  color: #fff;
+  border: none;
+  padding: 18px 0;
+  font-family: var(--font-display);
+  font-size: 18px;
+  letter-spacing: 4px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background .15s;
+  flex-shrink: 0;
+}
+.cta:hover { background: var(--red-dk); }
+
+.privacy {
+  font-size: 10px;
+  color: var(--s3);
+  text-align: center;
+  line-height: 1.5;
+  flex-shrink: 0;
+}
