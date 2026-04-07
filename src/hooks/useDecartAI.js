@@ -2,6 +2,10 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { createDecartClient, models } from '@decartai/sdk'
 import useTotemStore from '../store/useTotemStore'
 
+const DECART_TOKEN_ENDPOINT = import.meta.env.DEV
+  ? '/api/decart/token'
+  : '/.netlify/functions/decart-token'
+
 async function resolveReferenceImage(imageRef) {
   if (!imageRef) return null
   if (imageRef instanceof Blob || imageRef instanceof File) return imageRef
@@ -65,7 +69,7 @@ function waitForRealtimeReady(rt, timeoutMs = 20000) {
 }
 
 async function fetchClientToken() {
-  const res = await fetch('/api/decart/token', {
+  const res = await fetch(DECART_TOKEN_ENDPOINT, {
     method: 'POST',
     headers: {
       Accept: 'application/json',

@@ -1,13 +1,17 @@
 import { useCallback, useRef } from 'react'
 import { createDecartClient, models } from '@decartai/sdk'
 
+const DECART_TOKEN_ENDPOINT = import.meta.env.DEV
+  ? '/api/decart/token'
+  : '/.netlify/functions/decart-token'
+
 const EDIT_CROP_ASPECT = 9 / 16
 const EDIT_CROP_WIDTH_RATIO = 0.64
 const EDIT_CROP_TOP_RATIO = 0.12
 const EDIT_CROP_MAX_HEIGHT_RATIO = 0.72
 
 async function fetchClientToken() {
-  const res = await fetch('/api/decart/token', {
+  const res = await fetch(DECART_TOKEN_ENDPOINT, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
