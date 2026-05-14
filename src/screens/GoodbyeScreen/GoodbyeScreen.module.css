@@ -1,0 +1,124 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 32px 52px;
+  gap: 32px;
+  height: 100%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle radial glow */
+.root::before {
+  content: '';
+  position: absolute;
+  top: 30%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(227,24,54,.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.logoMark { flex-shrink: 0; }
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.thanks {
+  font-size: 16px;
+  color: var(--dim);
+  font-weight: 300;
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-size: 36px;
+  letter-spacing: 4px;
+  line-height: 1.1;
+  color: var(--txt);
+}
+
+.body {
+  font-size: 14px;
+  color: var(--dim);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.socialHint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.hashtag {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--red);
+  letter-spacing: 3px;
+}
+
+.socialText {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 2px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.resetBtn {
+  width: 100%;
+  background: none;
+  border: .5px solid var(--s3);
+  color: var(--dim);
+  padding: 16px 0;
+  font-family: var(--font-display);
+  font-size: 16px;
+  letter-spacing: 4px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: border-color .15s, color .15s, background .15s;
+}
+.resetBtn:hover { border-color: var(--dim); color: var(--txt); background: var(--s1); }
+
+/* Auto-reset progress bar */
+.autoReset {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background: var(--s2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.autoResetBar {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  background: var(--red);
+  border-radius: 2px;
+  transition: width 1s linear;
+}
+
+.autoResetText {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 9px;
+  color: var(--muted);
+  letter-spacing: 2px;
+  white-space: nowrap;
+}

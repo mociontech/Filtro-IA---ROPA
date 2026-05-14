@@ -1,0 +1,104 @@
+.root {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  background: #e31836;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  background-image: url('/WELCOME.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+}
+
+.options {
+  position: absolute;
+  left: 50%;
+  top: 36.4%;
+  transform: translateX(-50%);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6.1%;
+  width: 69.4%;
+  align-items: center;
+}
+
+.optionCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  align-self: start;
+  width: 100%;
+  height: fit-content;
+  line-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  transition: transform 0.18s ease;
+}
+
+.optionImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center bottom;
+  pointer-events: none;
+  display: block;
+  border-radius: 28px;
+}
+
+.optionImageWrap {
+  position: relative;
+  display: block;
+  width: 100%;
+  line-height: 0;
+}
+
+.optionImageWrapActive::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border: 9px solid #111;
+  border-radius: 43px;
+  pointer-events: none;
+}
+
+.startButtonWrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 76.7%;
+  display: flex;
+  justify-content: center;
+}
+
+.startButton {
+  background: transparent;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70.2%;
+}
+
+.startButton img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.startButtonDisabled {
+  opacity: 0.65;
+}

@@ -1,0 +1,121 @@
+.root {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.fields {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 46.5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.55vh;
+  padding: 0 44px;
+}
+
+.field {
+  position: relative;
+  width: 81.6667%;
+  line-height: 1;
+}
+
+.field img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.field input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #111;
+  font: 600 clamp(20px, 2.4vh, 30px) Arial, sans-serif;
+  padding: 0 28px 0 clamp(66px, 11vw, 96px);
+}
+
+.field input:focus {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+}
+
+.field input::placeholder {
+  color: rgba(17, 17, 17, 0.42);
+}
+
+.buttonWrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 69.85%;
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  width: 79.1667%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  line-height: 0;
+}
+
+.button img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.keyboard {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 12px 14px 16px;
+  background: rgba(0, 0, 0, 0.88);
+  box-shadow: 0 -14px 34px rgba(0, 0, 0, 0.32);
+}
+
+.keyRow {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.key {
+  min-width: 31px;
+  height: 36px;
+  border: 0;
+  border-radius: 7px;
+  background: #fff;
+  color: #111;
+  font: 700 12px Arial, sans-serif;
+  letter-spacing: 0;
+}
+
+.keyWide {
+  min-width: 68px;
+  padding: 0 10px;
+  font-size: 10px;
+}
